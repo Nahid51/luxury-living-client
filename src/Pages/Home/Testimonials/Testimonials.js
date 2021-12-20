@@ -1,0 +1,43 @@
+import React from 'react';
+import { Card, Col, Container, Row } from 'react-bootstrap';
+
+const Testimonials = () => {
+
+    return (
+        <div className='home-top'>
+            <div className='test-margin'>
+                <h3 className='text-center'>Testimonials</h3>
+                <Container>
+                    <Row xs={1} md={3} className="g-4">
+                        {Array.from({ length: 4 }).map((_, idx) => (
+                            <Col>
+                                <Card>
+                                    <Card.Img variant="top" src="holder.js/100px160" />
+                                    <Card.Body>
+                                        <Card.Title className='row'>
+                                            <Card className='col-4'>
+                                                <Card.Img variant="top" src="holder.js/100px160" />
+                                            </Card>
+                                            <Card className='col-8'>
+                                                <Card.Body>
+                                                    <Card.Title>Card title</Card.Title>
+                                                </Card.Body>
+                                            </Card>
+                                        </Card.Title>
+                                        <Card.Text>
+                                            This is a longer card with supporting text below as a natural
+                                            lead-in to additional content. This content is a little bit longer.
+                                        </Card.Text>
+                                    </Card.Body>
+                                </Card>
+                            </Col>
+                        ))}
+                    </Row>
+                </Container>
+            </div>
+        </div>
+
+    );
+};
+
+export default Testimonials;

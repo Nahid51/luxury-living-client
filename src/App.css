@@ -1,38 +1,28 @@
-.App {
-  text-align: center;
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
-
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+body{
+  font-family: 'Poppins', sans-serif;
 }
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+.home-top{
+  background-color: #F7F7F7;
 }
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+.edit-btn{
+  background-color: #251D58;
+  border: none;
 }
-
-.App-link {
-  color: #61dafb;
+.test-margin{
+  padding: 100px 0;
 }
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.form-setup{
+  border: 2px solid gray;
+  width: 50%;
+  margin: auto;
+  padding: 50px;
+}
+.login-text{
+  font-weight: 700;
+  margin: 20px 0;
 }

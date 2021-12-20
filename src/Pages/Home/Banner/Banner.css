@@ -1,0 +1,47 @@
+.banner-text{
+    position: absolute;
+    top: 30%;
+    left: 20%;
+    right: 10%;
+}
+.banner-head{
+    font-size: 50px;
+    font-weight: 900;
+}
+.banner-paragraph{
+    font-weight: 300;
+    margin: 20px 0;
+}
+@media only screen and (max-width: 480px) {
+    .banner-text{
+        position: inherit;
+        top: 0%;
+        left: 0%;
+    }
+    .banner-head{
+        font-size: 30px;
+        font-weight: 900;
+    }
+  }
+@media only screen and (min-width: 480px) and (max-width: 720px) {
+    .banner-text{
+        position: inherit;
+        top: 0%;
+        left: 0%;
+    }
+    .banner-head{
+        font-size: 30px;
+        font-weight: 900;
+    }
+  }
+@media only screen and (min-width: 721px) and (max-width: 1080px) {
+    .banner-text{
+        position: inherit;
+        top: 0%;
+        left: 0%;
+    }
+    .banner-head{
+        font-size: 30px;
+        font-weight: 900;
+    }
+  }
