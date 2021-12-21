@@ -10,9 +10,9 @@ const AddService = () => {
     const handleAddService = e => {
         const field = e.target.name;
         const value = e.target.value;
-        const newProductData = { ...serviceData };
-        newProductData[field] = value;
-        setServiceData(newProductData);
+        const newServiceData = { ...serviceData };
+        newServiceData[field] = value;
+        setServiceData(newServiceData);
     }
     const handleButton = e => {
         e.preventDefault();
@@ -36,17 +36,17 @@ const AddService = () => {
                         {success && <Alert variant='success'>Service added successfully!</Alert>}
                         <div className='row'>
                             <Form.Group className="col-12 col-md-6 mb-3" controlId="exampleForm.ControlInput1">
-                                <Form.Label>Service Title</Form.Label>
                                 <Form.Control
+                                    style={{ border: 'none', backgroundColor: '#F7F7F7', padding: '10px' }}
                                     onBlur={handleAddService}
                                     name='name'
                                     type="text"
-                                    placeholder="Enter Title"
+                                    placeholder="Enter Service Title"
                                 />
                             </Form.Group>
                             <Form.Group className="col-12 col-md-6 mb-3" controlId="exampleForm.ControlInput1">
-                                <Form.Label>Price</Form.Label>
                                 <Form.Control
+                                    style={{ border: 'none', backgroundColor: '#F7F7F7', padding: '10px' }}
                                     onBlur={handleAddService}
                                     name='price'
                                     type="number"
@@ -56,8 +56,8 @@ const AddService = () => {
                         </div>
                         <div className='row'>
                             <Form.Group className="col-12 col-md-6 mb-3" controlId="exampleForm.ControlTextarea1">
-                                <Form.Label>Description</Form.Label>
                                 <Form.Control
+                                    style={{ border: 'none', backgroundColor: '#F7F7F7', padding: '10px' }}
                                     onBlur={handleAddService}
                                     name='description'
                                     as="textarea"
@@ -66,12 +66,12 @@ const AddService = () => {
                                 />
                             </Form.Group>
                             <Form.Group className="col-12 col-md-6 mb-3" controlId="exampleForm.ControlTextarea1">
-                                <Form.Label>Upload Image</Form.Label>
                                 <Form.Control
+                                    style={{ border: 'none', backgroundColor: '#F7F7F7', padding: '10px' }}
                                     onBlur={handleAddService}
                                     name='photo'
                                     type='link'
-                                    placeholder='Image URL'
+                                    placeholder='Enter Image URL'
                                 />
                             </Form.Group>
                         </div>

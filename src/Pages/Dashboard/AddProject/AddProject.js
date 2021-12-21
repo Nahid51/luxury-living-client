@@ -35,37 +35,33 @@ const AddProject = () => {
                     {isLoading ? <Spinner animation="border" variant="warning" /> :
                         <Form className='border p-5 rounded'>
                             {success && <Alert variant='success'>Project added successfully!</Alert>}
-                            <div className='row'>
-                                <Form.Group className="col-12 col-md-6 mb-3" controlId="exampleForm.ControlInput1">
-                                    <Form.Label>Project Title</Form.Label>
-                                    <Form.Control
-                                        onBlur={handleAddProject}
-                                        name='name'
-                                        type="text"
-                                        placeholder="Enter Title"
-                                    />
-                                </Form.Group>
-                                <Form.Group className="col-12 col-md-6 mb-3" controlId="exampleForm.ControlTextarea1">
-                                    <Form.Label>Upload Image</Form.Label>
-                                    <Form.Control
-                                        onBlur={handleAddProject}
-                                        name='photo'
-                                        type='link'
-                                        placeholder='Image URL'
-                                    />
-                                </Form.Group>
-                            </div>
-                            <div className='row'>
-                                <Form.Group className="col-12 col-md-6 mb-3" controlId="exampleForm.ControlInput1">
-                                    <Form.Label>Location</Form.Label>
-                                    <Form.Control
-                                        onBlur={handleAddProject}
-                                        name='location'
-                                        type="text"
-                                        placeholder="Enter Location"
-                                    />
-                                </Form.Group>
-                            </div>
+                            <Form.Group className="mb-3" controlId="exampleForm.ControlInput1">
+                                <Form.Control
+                                    style={{ border: 'none', backgroundColor: '#F7F7F7', padding: '10px' }}
+                                    onBlur={handleAddProject}
+                                    name='name'
+                                    type="text"
+                                    placeholder="Enter Project Title"
+                                />
+                            </Form.Group>
+                            <Form.Group className="mb-3" controlId="exampleForm.ControlTextarea1">
+                                <Form.Control
+                                    style={{ border: 'none', backgroundColor: '#F7F7F7', padding: '10px' }}
+                                    onBlur={handleAddProject}
+                                    name='photo'
+                                    type='link'
+                                    placeholder='Enter Image URL'
+                                />
+                            </Form.Group>
+                            <Form.Group className="mb-3" controlId="exampleForm.ControlInput1">
+                                <Form.Control
+                                    style={{ border: 'none', backgroundColor: '#F7F7F7', padding: '10px' }}
+                                    onBlur={handleAddProject}
+                                    name='location'
+                                    type="text"
+                                    placeholder="Enter Location"
+                                />
+                            </Form.Group>
                             <Button onClick={handleButton} className='btn edit-btn'>Submit</Button>
                             <Button type='reset' className='btn edit-btn ms-1'>Reset</Button>
                         </Form>}

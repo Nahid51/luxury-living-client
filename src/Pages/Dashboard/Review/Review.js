@@ -37,6 +37,7 @@ const Review = () => {
                         {success && <Alert variant='success'>Review added successfully!</Alert>}
                         <Form.Group className="mb-3" controlId="exampleForm.ControlInput1">
                             <Form.Control
+                                style={{ border: 'none', backgroundColor: '#F7F7F7', padding: '10px' }}
                                 onBlur={handleAddReview}
                                 name='name'
                                 type="text"
@@ -45,6 +46,7 @@ const Review = () => {
                         </Form.Group>
                         <Form.Group className="mb-3" controlId="exampleForm.ControlInput1">
                             <Form.Control
+                                style={{ border: 'none', backgroundColor: '#F7F7F7', padding: '10px' }}
                                 onBlur={handleAddReview}
                                 name='photo'
                                 type="link"
@@ -53,6 +55,7 @@ const Review = () => {
                         </Form.Group>
                         <Form.Group className="mb-3" controlId="exampleForm.ControlInput1">
                             <Form.Control
+                                style={{ border: 'none', backgroundColor: '#F7F7F7', padding: '10px' }}
                                 onBlur={handleAddReview}
                                 name='position'
                                 type="text"
@@ -61,6 +64,7 @@ const Review = () => {
                         </Form.Group>
                         <Form.Group className="mb-3" controlId="exampleForm.ControlTextarea1">
                             <Form.Control
+                                style={{ border: 'none', backgroundColor: '#F7F7F7', padding: '10px' }}
                                 onBlur={handleAddReview}
                                 name='description'
                                 as="textarea"
@@ -70,6 +74,7 @@ const Review = () => {
                         </Form.Group>
                         <Form.Group className="mb-3" controlId="exampleForm.ControlInput1">
                             <Form.Control
+                                style={{ border: 'none', backgroundColor: '#F7F7F7', padding: '10px' }}
                                 onBlur={handleAddReview}
                                 name='rating'
                                 type="number"
