@@ -8,7 +8,7 @@ const useFirebase = () => {
     const [user, setUser] = useState({});
     const [isLoading, setIsLoading] = useState(true);
     const [error, setError] = useState('');
-    const [admin, setAdmin] = useState(false);
+    // const [admin, setAdmin] = useState(false);
 
     const auth = getAuth();
     const googleProvider = new GoogleAuthProvider();
@@ -22,7 +22,7 @@ const useFirebase = () => {
                 const destination = location?.state?.from || '/';
                 navigate(destination);
                 setError('')
-                saveUser(user.email, user.displayName, 'PUT');
+                // saveUser(user.email, user.displayName, 'PUT');
             }).catch((error) => {
                 // Handle Errors here.
                 setError(error.message);
@@ -38,7 +38,7 @@ const useFirebase = () => {
                 const destination = location?.state?.from || '/';
                 navigate(destination);
                 setError('')
-                saveUser(user.email, user.displayName, 'PUT');
+                // saveUser(user.email, user.displayName, 'PUT');
             })
             .catch((error) => {
                 // Handle Errors here.
@@ -58,7 +58,7 @@ const useFirebase = () => {
                 const newUser = { email, displayName: name };
                 setUser(newUser);
                 // save user
-                saveUser(email, name, 'POST');
+                // saveUser(email, name, 'POST');
                 // update profile
                 updateProfile(auth.currentUser, {
                     displayName: name
@@ -102,24 +102,24 @@ const useFirebase = () => {
             .finally(() => setIsLoading(false))
     }
 
-    useEffect(() => {
-        fetch(`https://aqueous-garden-63988.herokuapp.com/customers/${user?.email}`)
-            .then(res => res.json())
-            .then(data => {
-                setAdmin(data.admin);
-            })
-    }, [user?.email]);
+    // useEffect(() => {
+    //     fetch(`https://aqueous-garden-63988.herokuapp.com/customers/${user?.email}`)
+    //         .then(res => res.json())
+    //         .then(data => {
+    //             setAdmin(data.admin);
+    //         })
+    // }, [user?.email]);
 
-    const saveUser = (email, displayName, method) => {
-        const customer = { email, displayName };
-        fetch('https://aqueous-garden-63988.herokuapp.com/customers', {
-            method: method,
-            headers: { 'content-type': 'application/json' },
-            body: JSON.stringify(customer)
-        })
-            .then(res => res.json())
-            .then(data => console.log(data))
-    }
+    // const saveUser = (email, displayName, method) => {
+    //     const customer = { email, displayName };
+    //     fetch('https://aqueous-garden-63988.herokuapp.com/customers', {
+    //         method: method,
+    //         headers: { 'content-type': 'application/json' },
+    //         body: JSON.stringify(customer)
+    //     })
+    //         .then(res => res.json())
+    //         .then(data => console.log(data))
+    // }
 
     useEffect(() => {
         const userState = onAuthStateChanged(auth, (user) => {
@@ -134,7 +134,7 @@ const useFirebase = () => {
     }, [auth])
 
     return {
-        user, userRegistration, loginUser, logOut, isLoading, error, googleSignIn, facebookSignIn, admin
+        user, userRegistration, loginUser, logOut, isLoading, error, googleSignIn, facebookSignIn
     }
 };
 

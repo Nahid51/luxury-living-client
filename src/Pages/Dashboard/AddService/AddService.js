@@ -7,7 +7,7 @@ const AddService = () => {
     const [success, setSuccess] = useState(false);
     const { error, isLoading } = useAuth();
 
-    const handleAddProduct = e => {
+    const handleAddService = e => {
         const field = e.target.name;
         const value = e.target.value;
         const newProductData = { ...serviceData };
@@ -33,12 +33,12 @@ const AddService = () => {
                 {error && <Alert variant='danger'>{error}</Alert>}
                 {isLoading ? <Spinner animation="border" variant="warning" /> :
                     <Form className='border p-5 rounded'>
-                        {success && <Alert variant='success'>Product added Successfully!</Alert>}
+                        {success && <Alert variant='success'>Service added successfully!</Alert>}
                         <div className='row'>
                             <Form.Group className="col-12 col-md-6 mb-3" controlId="exampleForm.ControlInput1">
                                 <Form.Label>Service Title</Form.Label>
                                 <Form.Control
-                                    onBlur={handleAddProduct}
+                                    onBlur={handleAddService}
                                     name='name'
                                     type="text"
                                     placeholder="Enter Title"
@@ -47,7 +47,7 @@ const AddService = () => {
                             <Form.Group className="col-12 col-md-6 mb-3" controlId="exampleForm.ControlInput1">
                                 <Form.Label>Price</Form.Label>
                                 <Form.Control
-                                    onBlur={handleAddProduct}
+                                    onBlur={handleAddService}
                                     name='price'
                                     type="number"
                                     placeholder="Enter Price"
@@ -58,7 +58,7 @@ const AddService = () => {
                             <Form.Group className="col-12 col-md-6 mb-3" controlId="exampleForm.ControlTextarea1">
                                 <Form.Label>Description</Form.Label>
                                 <Form.Control
-                                    onBlur={handleAddProduct}
+                                    onBlur={handleAddService}
                                     name='description'
                                     as="textarea"
                                     placeholder='Enter Description'
@@ -68,7 +68,7 @@ const AddService = () => {
                             <Form.Group className="col-12 col-md-6 mb-3" controlId="exampleForm.ControlTextarea1">
                                 <Form.Label>Upload Image</Form.Label>
                                 <Form.Control
-                                    onBlur={handleAddProduct}
+                                    onBlur={handleAddService}
                                     name='photo'
                                     type='link'
                                     placeholder='Image URL'

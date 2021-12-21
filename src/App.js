@@ -18,6 +18,7 @@ import MakeAdmin from './Pages/Dashboard/MakeAdmin/MakeAdmin';
 import ManageService from './Pages/Dashboard/ManageService/ManageService';
 import AllServices from './Pages/AllServices/Allservices/AllServices';
 import PrivateRoute from './Redirects/PrivateRoute';
+import AddProject from './Pages/Dashboard/AddProject/AddProject';
 
 function App() {
   return (
@@ -36,6 +37,7 @@ function App() {
               <Route path="/dashboard/review" element={<Review />} />
               <Route path="/dashboard/orderlist" element={<OrderList />} />
               <Route path="/dashboard/addservice" element={<AddService />} />
+              <Route path="/dashboard/addproject" element={<AddProject />} />
               <Route path="/dashboard/makeadmin" element={<MakeAdmin />} />
               <Route path="/dashboard/manageservice" element={<ManageService />} />
             </Route>

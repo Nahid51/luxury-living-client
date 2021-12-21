@@ -47,6 +47,8 @@ function ResponsiveDrawer(props) {
                 <br /><br />
                 <NavLink style={{ textDecoration: 'none', color: '#322A62' }} to="/dashboard/addservice">Add Service</NavLink>
                 <br /><br />
+                <NavLink style={{ textDecoration: 'none', color: '#322A62' }} to="/dashboard/addproject">Add Project</NavLink>
+                <br /><br />
                 <NavLink style={{ textDecoration: 'none', color: '#322A62' }} to="/dashboard/makeadmin">Make Admin</NavLink>
                 <br /><br />
                 <NavLink style={{ textDecoration: 'none', color: '#322A62' }} to="/dashboard/manageservice">Manage Service</NavLink>

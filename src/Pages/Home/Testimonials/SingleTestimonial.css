@@ -1,0 +1,8 @@
+.testimonial-card{
+    height: 7rem;
+    text-align: justify;
+    overflow-y: scroll;
+  }
+.testimonial-card::-webkit-scrollbar{
+    display: none;
+  }

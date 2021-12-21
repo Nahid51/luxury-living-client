@@ -1,6 +1,6 @@
 import React from 'react';
 import { Alert, Container, Row, Spinner } from 'react-bootstrap';
-import { useGetAllServicesQuery } from '../../../Redux/Slices/ServiceSlice';
+import { useGetAllServicesQuery } from '../../../Redux/slices/serviceSlice';
 import Header from '../../Home/Header/Header';
 import AllService from '../AllService/AllService';
 

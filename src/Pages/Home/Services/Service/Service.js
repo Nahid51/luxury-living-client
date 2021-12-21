@@ -1,5 +1,6 @@
 import React from 'react';
 import { Card, Col } from 'react-bootstrap';
+import './Service.css'
 
 const Service = ({ service }) => {
     const { photo, name, price, description } = service;
@@ -11,7 +12,7 @@ const Service = ({ service }) => {
                     <Card.Body>
                         <Card.Title className='fw-bold'>{name}</Card.Title>
                         <Card.Text className='fw-bold'>&#36;{price}</Card.Text>
-                        <Card.Text style={{ textAlign: 'justify', height: '200px', overflowY: 'scroll', scrollbarWidth: 'none' }}>{description}</Card.Text>
+                        <Card.Text className='service-card text-secondary'>{description}</Card.Text>
                     </Card.Body>
                 </Card>
             </Col>

@@ -8,17 +8,30 @@ export const servicesApi = createApi({
     endpoints: (builder) => ({
         getServices: builder.query({
             query: () => ({
-                url: '/services',
+                url: 'services',
                 method: 'GET'
             }),
         }),
         getAllServices: builder.query({
             query: () => ({
-                url: '/allservices',
+                url: 'allservices',
                 method: 'GET'
             })
-        })
+        }),
+        getProjects: builder.query({
+            query: () => ({
+                url: 'projects',
+                method: 'GET'
+            })
+        }),
+        getReviews: builder.query({
+            query: () => ({
+                url: 'reviews',
+                method: 'GET'
+            })
+        }),
+
     }),
 })
 
-export const { useGetServicesQuery, useGetAllServicesQuery } = servicesApi
+export const { useGetServicesQuery, useGetAllServicesQuery, useGetProjectsQuery, useGetReviewsQuery } = servicesApi
