@@ -3,27 +3,27 @@ import { Alert, Button, Form, Spinner } from 'react-bootstrap';
 import useAuth from '../../../Hooks/useAuth';
 
 const MakeAdmin = () => {
-    const [adminData, setAdminData] = useState({});
+    const [adminData, setAdminData] = useState('');
     const [success, setSuccess] = useState(false);
     const { error, isLoading } = useAuth();
 
     const handleAddAdmin = e => {
-        const field = e.target.name;
-        const value = e.target.value;
-        const newAdminData = { ...adminData };
-        newAdminData[field] = value;
-        setAdminData(newAdminData);
+        setAdminData(e.target.value);
     }
     const handleButton = e => {
         e.preventDefault();
-        fetch('http://localhost:5000/addAdmin', {
-            method: 'POST',
+        const user = { adminData }
+        fetch('http://localhost:5000/users/admin', {
+            method: 'PUT',
             headers: { 'content-type': 'application/json' },
-            body: JSON.stringify(adminData)
+            body: JSON.stringify(user)
         })
             .then(res => res.json())
             .then(data => {
-                setSuccess(true);
+                if (data.modifiedCount) {
+                    console.log(data);
+                    setSuccess(true);
+                }
             })
     }
     return (
@@ -33,13 +33,13 @@ const MakeAdmin = () => {
                 {error && <Alert variant='danger'>{error}</Alert>}
                 {isLoading ? <Spinner animation="border" variant="warning" /> :
                     <Form className='border p-5 rounded'>
-                        {success && <Alert variant='success'>Admin added successfully!</Alert>}
+                        {success && <Alert variant='success'>Made Admin successfully!</Alert>}
                         <Form.Group className="mb-3" controlId="exampleForm.ControlInput1">
                             <Form.Control
                                 style={{ border: 'none', backgroundColor: '#F7F7F7', padding: '10px' }}
                                 onBlur={handleAddAdmin}
-                                name='name'
-                                type="text"
+                                name='Email'
+                                type="email"
                                 placeholder="Enter Email Address"
                             />
                         </Form.Group>

@@ -1,6 +1,7 @@
 import React from 'react';
 import { Button, Container, Nav, Navbar } from 'react-bootstrap';
 import { NavLink } from 'react-router-dom';
+import { HashLink } from 'react-router-hash-link';
 import useAuth from '../../../Hooks/useAuth';
 import logo from '../../../Images/Group 33069.png';
 
@@ -29,7 +30,7 @@ const Header = () => {
                                     <NavLink className='me-5 text-dark text-decoration-none' to="/projects">Projects</NavLink>
                                     <NavLink className='me-5 text-dark text-decoration-none' to="/allservices">Services</NavLink>
                                     <NavLink className='me-5 text-dark text-decoration-none' to="/dashboard">Dashboard</NavLink>
-                                    <Nav.Link className='me-5 text-dark' href="#contact">Contact</Nav.Link>
+                                    <HashLink className='me-5 text-dark text-decoration-none' to="/home#contact">Contact</HashLink>
                                 </Nav>
                                 <Nav className="ms-auto">
                                     <Nav.Link href="">Signed in as: {user.displayName}</Nav.Link>

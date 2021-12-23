@@ -19,6 +19,7 @@ import ManageService from './Pages/Dashboard/ManageService/ManageService';
 import AllServices from './Pages/AllServices/Allservices/AllServices';
 import PrivateRoute from './Redirects/PrivateRoute';
 import AddProject from './Pages/Dashboard/AddProject/AddProject';
+import AdminRoute from './Redirects/AdminRoute';
 
 function App() {
   return (
@@ -35,11 +36,11 @@ function App() {
               <Route path="/dashboard/" element={<Book />} />
               <Route path="/dashboard/bookinglist" element={<BookingList />} />
               <Route path="/dashboard/review" element={<Review />} />
-              <Route path="/dashboard/orderlist" element={<OrderList />} />
-              <Route path="/dashboard/addservice" element={<AddService />} />
-              <Route path="/dashboard/addproject" element={<AddProject />} />
-              <Route path="/dashboard/makeadmin" element={<MakeAdmin />} />
-              <Route path="/dashboard/manageservice" element={<ManageService />} />
+              <Route path="/dashboard/orderlist" element={<AdminRoute><OrderList /></AdminRoute>} />
+              <Route path="/dashboard/addservice" element={<AdminRoute><AddService /></AdminRoute>} />
+              <Route path="/dashboard/addproject" element={<AdminRoute><AddProject /></AdminRoute>} />
+              <Route path="/dashboard/makeadmin" element={<AdminRoute><MakeAdmin /></AdminRoute>} />
+              <Route path="/dashboard/manageservice" element={<AdminRoute><ManageService /></AdminRoute>} />
             </Route>
           </Routes>
         </BrowserRouter>

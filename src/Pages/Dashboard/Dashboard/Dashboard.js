@@ -12,11 +12,12 @@ import Typography from '@mui/material/Typography';
 import { NavLink, Outlet } from 'react-router-dom';
 import logo from '../../../Images/Group 33069.png'
 import useAuth from '../../../Hooks/useAuth';
+import { Button } from '@mui/material';
 
 const drawerWidth = 200;
 
 function ResponsiveDrawer(props) {
-    const { user } = useAuth();
+    const { user, admin, logOut } = useAuth();
     const { window } = props;
     const [mobileOpen, setMobileOpen] = React.useState(false);
 
@@ -43,17 +44,26 @@ function ResponsiveDrawer(props) {
                 <NavLink style={{ textDecoration: 'none', color: '#322A62' }} to="/dashboard/review">Review</NavLink>
                 <br /><br />
 
-                <NavLink style={{ textDecoration: 'none', color: '#322A62' }} to="/dashboard/orderlist">Order List</NavLink>
-                <br /><br />
-                <NavLink style={{ textDecoration: 'none', color: '#322A62' }} to="/dashboard/addservice">Add Service</NavLink>
-                <br /><br />
-                <NavLink style={{ textDecoration: 'none', color: '#322A62' }} to="/dashboard/addproject">Add Project</NavLink>
-                <br /><br />
-                <NavLink style={{ textDecoration: 'none', color: '#322A62' }} to="/dashboard/makeadmin">Make Admin</NavLink>
-                <br /><br />
-                <NavLink style={{ textDecoration: 'none', color: '#322A62' }} to="/dashboard/manageservice">Manage Service</NavLink>
+                {admin &&
+                    <Box>
+                        <NavLink style={{ textDecoration: 'none', color: '#322A62' }} to="/dashboard/orderlist">Order List</NavLink>
+                        <br /><br />
+                        <NavLink style={{ textDecoration: 'none', color: '#322A62' }} to="/dashboard/addservice">Add Service</NavLink>
+                        <br /><br />
+                        <NavLink style={{ textDecoration: 'none', color: '#322A62' }} to="/dashboard/addproject">Add Project</NavLink>
+                        <br /><br />
+                        <NavLink style={{ textDecoration: 'none', color: '#322A62' }} to="/dashboard/makeadmin">Make Admin</NavLink>
+                        <br /><br />
+                        <NavLink style={{ textDecoration: 'none', color: '#322A62' }} to="/dashboard/manageservice">Manage Service</NavLink>
+                    </Box>
+                }
 
-
+                {user.email ?
+                    <Button onClick={logOut} variant='contained' sx={{ mt: 5 }}>Logout</Button> :
+                    <NavLink to='/login'>
+                        <Button variant='contained' sx={{ mt: 5 }}>Login</Button>
+                    </NavLink>
+                }
             </List>
         </div>
     );

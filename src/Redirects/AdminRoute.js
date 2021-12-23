@@ -4,8 +4,8 @@ import { Navigate, useLocation } from 'react-router-dom';
 import useAuth from '../Hooks/useAuth';
 
 const AdminRoute = ({ children }) => {
-    let location = useLocation();
     const { user, admin, isLoading } = useAuth();
+    let location = useLocation();
     if (isLoading) {
         return <Spinner animation="border" variant="warning" />
     }

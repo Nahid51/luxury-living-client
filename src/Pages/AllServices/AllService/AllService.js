@@ -1,6 +1,7 @@
 import React from 'react';
 import { Button, Card, Col } from 'react-bootstrap';
 import { NavLink } from 'react-router-dom';
+import './AllService.css'
 
 const AllService = ({ service }) => {
     const { photo, name, price, description } = service;
@@ -12,7 +13,7 @@ const AllService = ({ service }) => {
                     <Card.Body>
                         <Card.Title className='fw-bold'>{name}</Card.Title>
                         <Card.Text className='fw-bold'>&#36;{price}</Card.Text>
-                        <Card.Text style={{ textAlign: 'justify', height: '200px', overflowY: 'scroll', scrollbarWidth: 'none' }}>{description}</Card.Text>
+                        <Card.Text className='allService-card'>{description}</Card.Text>
                         <NavLink to="/dashboard"><Button className='btn edit-btn'>Book Now</Button></NavLink>
                     </Card.Body>
                 </Card>
