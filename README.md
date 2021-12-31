@@ -1,31 +1,31 @@
 # Getting Started with Create React App
 
 This project was made by React JS with some special features.
- [Luxury Living](https://github.com/facebook/create-react-app).
+ [Luxury Living](https://luxury-living-4451f.web.app/).
 
-## Available Scripts
+## Available Methods
 
-In the project directory, you can run:
+React.js, Ract Bootstrap, React-Route-Dom, Redux, Firebase Authentication, Firebase Hosting, Node.js, Express js, MongoDB Atlas Database, SSL Commercz payment Method, Heroku, Font Awesome, Google Fonts etc.
 
-### `npm start`
+### `About Luxury Living`
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+Luxury living is a website where our services can be booked through online. Basically there are several services like interior design, showroom design etc. We have a large team who go to different locations and provide the services but our booking system has to be done through online.
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
 
-### `npm test`
+### `Build system of Luxury Living`
+We have followed several methods to create this whole project.
+1. Mainly I did this project with react.js
+2. I used react-bootstrap for the design part
+3. For routing purposes I used react-router-dom
+4. For the backend I used node.js, express js
+5. All the data are stored in the MongoDB database
+6. Firebase authentication is used for login purpose
+7. There are some different functionality for general user and admin
+8. I used redux for loading data
+9. For purchase system, I used SSL commerz
+10. Full projects are fully responsive for mobile or desktop screen
+11. Backend side are deployed on Heroku
+12. Frontend side are deployed on firebase
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
 
-### `npm run build`
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
-
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
