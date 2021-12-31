@@ -3,7 +3,7 @@ import { createApi, fetchBaseQuery } from '@reduxjs/toolkit/query/react'
 export const servicesApi = createApi({
     reducerPath: 'servicesApi',
     baseQuery: fetchBaseQuery({
-        baseUrl: 'http://localhost:5000/'
+        baseUrl: 'https://frozen-falls-89510.herokuapp.com/'
     }),
     endpoints: (builder) => ({
         getServices: builder.query({

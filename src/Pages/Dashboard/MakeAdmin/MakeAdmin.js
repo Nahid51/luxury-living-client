@@ -5,7 +5,7 @@ import useAuth from '../../../Hooks/useAuth';
 const MakeAdmin = () => {
     const [adminData, setAdminData] = useState('');
     const [success, setSuccess] = useState(false);
-    const { error, isLoading } = useAuth();
+    const { error, isLoading, token } = useAuth();
 
     const handleAddAdmin = e => {
         setAdminData(e.target.value);
@@ -13,9 +13,12 @@ const MakeAdmin = () => {
     const handleButton = e => {
         e.preventDefault();
         const user = { adminData }
-        fetch('http://localhost:5000/users/admin', {
+        fetch('https://frozen-falls-89510.herokuapp.com/users/admin', {
             method: 'PUT',
-            headers: { 'content-type': 'application/json' },
+            headers: {
+                'authorization': `Bearer ${token}`,
+                'content-type': 'application/json'
+            },
             body: JSON.stringify(user)
         })
             .then(res => res.json())

@@ -6,6 +6,7 @@ import './SingleTestimonial.css'
 
 const SingleTestimonial = ({ testimonial }) => {
     const { photo, name, position, description, rating } = testimonial;
+    const ratingValue = Number(rating);
     return (
         <div>
             <Col>
@@ -28,7 +29,7 @@ const SingleTestimonial = ({ testimonial }) => {
                                 '& > legend': { mt: 2 },
                             }}
                         >
-                            <Rating name="read-only" defaultValue={rating} readOnly />
+                            <Rating name="read-only" defaultValue={ratingValue} readOnly />
                         </Box>
                     </Card.Body>
                 </Card>

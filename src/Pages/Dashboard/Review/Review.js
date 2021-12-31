@@ -16,7 +16,7 @@ const Review = () => {
     }
     const handleButton = e => {
         e.preventDefault();
-        fetch('http://localhost:5000/addReview', {
+        fetch('https://frozen-falls-89510.herokuapp.com/addReview', {
             method: 'POST',
             headers: { 'content-type': 'application/json' },
             body: JSON.stringify(reviewData)

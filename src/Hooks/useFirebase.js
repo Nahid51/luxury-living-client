@@ -1,5 +1,5 @@
 import { useEffect, useState } from 'react';
-import { getAuth, createUserWithEmailAndPassword, signOut, onAuthStateChanged, signInWithEmailAndPassword, GoogleAuthProvider, signInWithPopup, updateProfile, FacebookAuthProvider } from "firebase/auth";
+import { getAuth, createUserWithEmailAndPassword, signOut, onAuthStateChanged, signInWithEmailAndPassword, GoogleAuthProvider, signInWithPopup, updateProfile, FacebookAuthProvider, getIdToken } from "firebase/auth";
 import initializeAuthentication from '../Firebase/firebase.init';
 
 initializeAuthentication();
@@ -9,6 +9,7 @@ const useFirebase = () => {
     const [isLoading, setIsLoading] = useState(true);
     const [error, setError] = useState('');
     const [admin, setAdmin] = useState(false);
+    const [token, setToken] = useState('');
 
     const auth = getAuth();
     const googleProvider = new GoogleAuthProvider();
@@ -28,7 +29,7 @@ const useFirebase = () => {
                 setError(error.message);
             })
             .finally(() => setIsLoading(false));
-    }
+    };
 
     const facebookSignIn = (location, navigate) => {
         setIsLoading(true);
@@ -45,7 +46,7 @@ const useFirebase = () => {
                 setError(error.message);
             })
             .finally(() => setIsLoading(false));
-    }
+    };
 
     const userRegistration = (email, password, name, location, navigate) => {
         setIsLoading(true);
@@ -74,7 +75,7 @@ const useFirebase = () => {
                 setError(error.message);
             })
             .finally(() => setIsLoading(false));
-    }
+    };
 
     const loginUser = (email, password, location, navigate) => {
         setIsLoading(true)
@@ -89,7 +90,7 @@ const useFirebase = () => {
                 setError(error.message);
             })
             .finally(() => setIsLoading(false));
-    }
+    };
 
     const logOut = () => {
         setIsLoading(true)
@@ -100,39 +101,43 @@ const useFirebase = () => {
             setError(error.message);
         })
             .finally(() => setIsLoading(false));
-    }
+    };
 
-    useEffect(() => {
-        fetch(`http://localhost:5000/users/${user?.email}`)
-            .then(res => res.json())
-            .then(data => setAdmin(data.admin))
-    }, [user?.email]);
-
-    const saveUser = (email, displayName, method) => {
-        const user = { email, displayName };
-        fetch('http://localhost:5000/users', {
-            method: method,
-            headers: { 'content-type': 'application/json' },
-            body: JSON.stringify(user)
-        })
-            .then(res => res.json())
-            .then(data => console.log(data))
-    }
-
+    // observe user state
     useEffect(() => {
         const userState = onAuthStateChanged(auth, (user) => {
             if (user) {
                 setUser(user);
+                getIdToken(user)
+                    .then(idToken => setToken(idToken))
             } else {
                 setUser({});
             }
             setIsLoading(false);
         });
         return () => userState;
-    }, [auth])
+    }, [auth]);
+
+    //make secure for admin
+    useEffect(() => {
+        fetch(`https://frozen-falls-89510.herokuapp.com/users/${user?.email}`)
+            .then(res => res.json())
+            .then(data => setAdmin(data.admin))
+    }, [user?.email]);
+
+    const saveUser = (email, displayName, method) => {
+        const user = { email, displayName };
+        fetch('https://frozen-falls-89510.herokuapp.com/users', {
+            method: method,
+            headers: { 'content-type': 'application/json' },
+            body: JSON.stringify(user)
+        })
+            .then(res => res.json())
+            .then(data => console.log(data))
+    };
 
     return {
-        user, admin, userRegistration, loginUser, logOut, isLoading, error, googleSignIn, facebookSignIn, saveUser
+        user, admin, token, userRegistration, loginUser, logOut, isLoading, error, googleSignIn, facebookSignIn, saveUser
     }
 };
 
