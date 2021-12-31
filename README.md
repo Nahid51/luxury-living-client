@@ -5,7 +5,7 @@ This project was made by React JS with some special features.
 
 ## Available Methods
 
-React.js, Ract Bootstrap, React-Route-Dom, Redux, Firebase Authentication, Firebase Hosting, Node.js, Express js, MongoDB Atlas Database, SSL Commercz payment Method, Heroku, Font Awesome, Google Fonts etc.
+React.js, React Bootstrap, React-Route-Dom, Redux, Firebase Authentication, Firebase Hosting, Node.js, Express js, MongoDB Atlas Database, SSL Commercz payment Method, Heroku, Font Awesome, Google Fonts etc.
 
 ### `About Luxury Living`
 
