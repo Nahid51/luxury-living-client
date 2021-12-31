@@ -6,7 +6,7 @@ import Project from '../Project/Project';
 const Projects = () => {
     const projectsInfo = useGetProjectsQuery() || {};
     return (
-        <div className='mt-5 text-center'>
+        <div id='projects' className='mt-5 text-center'>
             <Container>
                 <h6 style={{ color: '#251d58' }}>Projects</h6>
                 <h3 className='fw-bold'>Discover the latest Interior <br /> Design available today</h3>

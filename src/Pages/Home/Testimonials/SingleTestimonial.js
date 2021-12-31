@@ -14,7 +14,7 @@ const SingleTestimonial = ({ testimonial }) => {
                     <Card.Body>
                         <Card.Title className='row align-items-center'>
                             <Card className='col-3 border-0'>
-                                <Card.Img variant="top" src={photo} />
+                                <Card.Img style={{ height: '80px', width: '80px' }} className='rounded-circle' variant="top" src={photo} />
                             </Card>
                             <Card className='col-9 border-0'>
                                 <Card.Body>

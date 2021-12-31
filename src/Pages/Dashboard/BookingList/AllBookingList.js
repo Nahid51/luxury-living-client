@@ -7,7 +7,7 @@ const AllBookingList = () => {
     const { user, error, isLoading } = useAuth();
     const [allOrder, setAllOrder] = useState([]);
     useEffect(() => {
-        fetch('http://localhost:5000/orderInfo', {
+        fetch('https://frozen-falls-89510.herokuapp.com/orderInfo', {
             method: 'POST',
             headers: { 'content-type': 'application/json' },
             body: JSON.stringify(user)

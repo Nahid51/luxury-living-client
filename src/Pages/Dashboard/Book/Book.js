@@ -18,7 +18,7 @@ const Book = () => {
 
     const purchase = () => {
         const order = { cusName, cusEmail, serviceName, serviceImage, serviceProfile, totalAmount };
-        fetch('http://localhost:5000/init', {
+        fetch('https://frozen-falls-89510.herokuapp.com/init', {
             method: 'POST',
             headers: { "content-type": "application/json" },
             body: JSON.stringify(order)

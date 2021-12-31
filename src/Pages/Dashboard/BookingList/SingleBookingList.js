@@ -8,7 +8,7 @@ const SingleBookingList = ({ order }) => {
             tran_id: tran_id,
             val_id: val_id
         }
-        fetch('http://localhost:5000/validate', {
+        fetch('https://frozen-falls-89510.herokuapp.com/validate', {
             method: 'POST',
             headers: { 'content-type': 'application/json' },
             body: JSON.stringify(serviceData)
