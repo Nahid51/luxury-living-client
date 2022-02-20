@@ -1,7 +1,7 @@
 import React from 'react';
 import { Alert, Button, Container, Row, Spinner } from 'react-bootstrap';
 import { NavLink } from 'react-router-dom';
-import { useGetServicesQuery } from '../../../../Redux/slices/serviceSlice';
+import { useGetServicesQuery } from '../../../../Redux/Slices/serviceSlice';
 import Service from '../Service/Service';
 
 const Services = () => {

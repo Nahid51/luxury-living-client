@@ -1,6 +1,6 @@
 import React from 'react';
 import { Container, Row } from 'react-bootstrap';
-import { useGetReviewsQuery } from '../../../Redux/slices/serviceSlice';
+import { useGetReviewsQuery } from '../../../Redux/Slices/serviceSlice';
 import SingleTestimonial from './SingleTestimonial';
 
 const Testimonials = () => {

@@ -1,6 +1,6 @@
 import { configureStore } from '@reduxjs/toolkit'
 import { setupListeners } from '@reduxjs/toolkit/query'
-import { servicesApi } from '../slices/serviceSlice'
+import { servicesApi } from '../Slices/serviceSlice'
 
 export const store = configureStore({
     reducer: {

@@ -1,6 +1,6 @@
 import React from 'react';
 import { Container, Row } from 'react-bootstrap';
-import { useGetProjectsQuery } from '../../../../Redux/slices/serviceSlice';
+import { useGetProjectsQuery } from '../../../../Redux/Slices/serviceSlice';
 import Project from '../Project/Project';
 
 const Projects = () => {

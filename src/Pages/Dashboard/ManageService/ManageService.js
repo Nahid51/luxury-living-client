@@ -1,7 +1,7 @@
 import React from 'react';
 import { Alert, Row, Spinner } from 'react-bootstrap';
 import useAuth from '../../../Hooks/useAuth';
-import { useGetOrdersQuery } from '../../../Redux/slices/serviceSlice';
+import { useGetOrdersQuery } from '../../../Redux/Slices/serviceSlice';
 import ShowOrder from './ShowOrder';
 
 const ManageService = () => {
